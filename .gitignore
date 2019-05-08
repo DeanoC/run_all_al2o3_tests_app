@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+/.vs/run_all_al2o3_tests_app/v16
+/.vs/slnx.sqlite
+/out_bin

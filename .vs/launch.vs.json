@@ -1,0 +1,13 @@
+{
+  "version": "0.2.1",
+  "defaults": {},
+  "configurations": [
+    {
+      "type": "default",
+      "name": "run all tests",
+      "project": "CMakeLists.txt",
+      "currentDir": "${env.USERPROFILE}\\source\\run_all_al2o3_tests_app\\out_bin",
+      "projectTarget": "run_all_al2o3_tests_app.exe (C:\\Users\\deano\\source\\repos\\run_all_al2o3_tests_app\\out_bin\\run_all_al2o3_tests_app.exe)"
+    }
+  ]
+}

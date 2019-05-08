@@ -2,8 +2,16 @@
 #include "al2o3_os/filesystem.hpp"
 
 void RunTestFunc(Os_DirectoryEnumeratorHandle handle, void* userData, char const* filename) {
-	LOGINFOF("Running %s test", filename);
 	if (strncmp(filename, "test_", 5) == 0) {
+#if AL2O3_PLATFORM == AL2O3_PLATFORM_WINDOWS
+		size_t namePos;
+		size_t extPos;
+		Os_SplitPath(filename, &namePos, &extPos);
+		if (extPos == FS_npos) return;
+		if (strncmp(filename + extPos, "exe", 4) != 0) return;
+#endif
+
+		LOGINFOF("Running %s test", filename);
 		Os_SystemRun(filename, 0, nullptr);
 	}
 }
