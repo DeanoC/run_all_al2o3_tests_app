@@ -8,6 +8,7 @@ set(Deps
 		al2o3_catch2
 		al2o3_tinystl
 		al2o3_os
+		al2o3_sstl
 		)
 
 include(FetchContent)
