@@ -16,6 +16,9 @@ void RunTestFunc(Os_DirectoryEnumeratorHandle handle, void* userData, char const
 	}
 }
 int main(int argv, char* argc[]) {
+	// yes loggin and some filsystem (directory and system run) need to be
+	// tested andf working before this works. Classic bootstrap issue :)
+
 	LOGWARNING("Parsing folder for test_*");
 	Os_DirectoryEnumeratorHandle handle = Os_DirectoryEnumeratorFromPath("./", &RunTestFunc, nullptr);
 	Os_DirectoryEnumeratorSyncStart(handle);
