@@ -9,6 +9,7 @@ set(Deps
 		al2o3_tinystl
 		al2o3_os
 		al2o3_sstl
+		al2o3_cmath
 		)
 
 include(FetchContent)
