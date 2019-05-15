@@ -15,5 +15,7 @@
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/lz4_lz4-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/rukkal_static-stl-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/rukkal_static-stl-src/Catch" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/simple_logmanager-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/utils_simple_logmanager-src" vcs="Git" />
   </component>
 </project>

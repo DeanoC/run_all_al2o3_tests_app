@@ -12,6 +12,7 @@ set(Deps
 		al2o3_cmath
 		al2o3_lz4
 		al2o3_miniz
+		utils_simple_logmanager
 		)
 
 include(FetchContent)

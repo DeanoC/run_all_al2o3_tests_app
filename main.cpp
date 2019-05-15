@@ -19,12 +19,15 @@ int main(int argv, char* argc[]) {
 	// yes loggin and some filsystem (directory and system run) need to be
 	// tested andf working before this works. Classic bootstrap issue :)
 
-	LOGWARNING("Parsing folder for test_*");
-	Os_DirectoryEnumeratorHandle handle = Os_DirectoryEnumeratorFromPath("./", &RunTestFunc, nullptr);
+	// in case logger is broken or quieted at least show something
+	printf("Starting run_all_al2o3_tests_app\n");
+
+	LOGINFO("Parsing folder for test_*");
+	Os_DirectoryEnumeratorHandle handle = Os_DirectoryEnumeratorAlloc("./", &RunTestFunc, nullptr);
 	Os_DirectoryEnumeratorSyncStart(handle);
 	while (Os_DirectoryEnumeratorSyncNext(handle)) {
 		// do nothing
 	}
-	Os_DirectoryEnumeratorClose(handle);
+	Os_DirectoryEnumeratorFree(handle);
 	return 0;
 }
