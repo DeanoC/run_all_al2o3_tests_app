@@ -13,7 +13,13 @@ set(Deps
 		al2o3_cmath
 		al2o3_lz4
 		al2o3_miniz
+		al2o3_stb
 		utils_simple_logmanager
+		utils_misccpp
+		gfx_imageformat
+		gfx_image_interface
+		gfx_image_impl_basic
+		gfx_imageio
 		)
 
 include(FetchContent)

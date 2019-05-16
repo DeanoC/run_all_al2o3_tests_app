@@ -1,5 +1,6 @@
 #include "al2o3_platform/platform.h"
 #include "al2o3_os/filesystem.hpp"
+#include "utils_simple_logmanager/logmanager.h"
 
 void RunTestFunc(Os_DirectoryEnumeratorHandle handle, void* userData, char const* filename) {
 	if (strncmp(filename, "test_", 5) == 0) {
@@ -19,8 +20,10 @@ int main(int argv, char* argc[]) {
 	// yes loggin and some filsystem (directory and system run) need to be
 	// tested andf working before this works. Classic bootstrap issue :)
 
-	// in case logger is broken or quieted at least show something
+	// in case logger is broken at least show something
 	printf("Starting run_all_al2o3_tests_app\n");
+
+	auto logger = SimpleLogManager_Alloc();
 
 	LOGINFO("Parsing folder for test_*");
 	Os_DirectoryEnumeratorHandle handle = Os_DirectoryEnumeratorAlloc("./", &RunTestFunc, nullptr);
@@ -29,5 +32,8 @@ int main(int argv, char* argc[]) {
 		// do nothing
 	}
 	Os_DirectoryEnumeratorFree(handle);
+
+	SimpleLogManager_Free(logger);
+
 	return 0;
 }
