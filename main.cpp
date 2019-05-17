@@ -11,6 +11,7 @@ void RunTestFunc(Os_DirectoryEnumeratorHandle handle, void* userData, char const
 		if (extPos == FS_npos) return;
 		if (strncmp(filename + extPos, "exe", 4) != 0) return;
 #endif
+		if (strncmp(filename, "test_data", 9) == 0) return;
 
 		LOGINFOF("Running %s test", filename);
 		Os_SystemRun(filename, 0, nullptr);
@@ -25,13 +26,16 @@ int main(int argv, char* argc[]) {
 
 	auto logger = SimpleLogManager_Alloc();
 
+	int count = 0;
 	LOGINFO("Parsing folder for test_*");
 	Os_DirectoryEnumeratorHandle handle = Os_DirectoryEnumeratorAlloc("./", &RunTestFunc, nullptr);
 	Os_DirectoryEnumeratorSyncStart(handle);
 	while (Os_DirectoryEnumeratorSyncNext(handle)) {
-		// do nothing
+		count++;
 	}
 	Os_DirectoryEnumeratorFree(handle);
+
+	LOGINFOF("%i tests ran", count);
 
 	SimpleLogManager_Free(logger);
 

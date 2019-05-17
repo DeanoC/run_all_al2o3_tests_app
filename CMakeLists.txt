@@ -1,4 +1,14 @@
-cmake_minimum_required(VERSION 3.13)
+cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+
+include(FetchContent)
+FetchContent_Declare( al2o3 GIT_REPOSITORY https://github.com/DeanoC/al2o3 GIT_TAG master )
+FetchContent_GetProperties(al2o3)
+if(NOT al2o3_POPULATED)
+	FetchContent_Populate(al2o3)
+	add_subdirectory(${al2o3_SOURCE_DIR} ${al2o3_BINARY_DIR})
+endif()
+
+SET_MIN_VERSIONS()
 set(ProjectName run_all_al2o3_tests_app)
 project(${ProjectName})
 
@@ -22,13 +32,6 @@ set(Deps
 		gfx_imageio
 		)
 
-include(FetchContent)
-FetchContent_Declare( al2o3 GIT_REPOSITORY https://github.com/DeanoC/al2o3 GIT_TAG master )
-FetchContent_GetProperties(al2o3)
-if(NOT al2o3_POPULATED)
-	FetchContent_Populate(al2o3)
-	add_subdirectory(${al2o3_SOURCE_DIR} ${al2o3_BINARY_DIR})
-endif()
 
 option(BUILD_TESTS "Build Test executubles" ON)
 
