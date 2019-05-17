@@ -26,6 +26,7 @@ set(Deps
 		al2o3_stb
 		utils_simple_logmanager
 		utils_misccpp
+		utils_gameappshell
 		gfx_imageformat
 		gfx_image_interface
 		gfx_image_impl_basic
