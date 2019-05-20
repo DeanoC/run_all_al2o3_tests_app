@@ -2,6 +2,9 @@
 #include "al2o3_os/filesystem.hpp"
 #include "utils_simple_logmanager/logmanager.h"
 
+static int testsRan = 0;
+
+
 void RunTestFunc(Os_DirectoryEnumeratorHandle handle, void* userData, char const* filename) {
 	if (strncmp(filename, "test_", 5) == 0) {
 #if AL2O3_PLATFORM == AL2O3_PLATFORM_WINDOWS
@@ -15,6 +18,8 @@ void RunTestFunc(Os_DirectoryEnumeratorHandle handle, void* userData, char const
 
 		LOGINFOF("Running %s test", filename);
 		Os_SystemRun(filename, 0, nullptr);
+
+		testsRan++;
 	}
 }
 int main(int argv, char* argc[]) {
@@ -26,16 +31,13 @@ int main(int argv, char* argc[]) {
 
 	auto logger = SimpleLogManager_Alloc();
 
-	int count = 0;
-	LOGINFO("Parsing folder for test_*");
+	LOGINFO("Searching folder for test_*");
 	Os_DirectoryEnumeratorHandle handle = Os_DirectoryEnumeratorAlloc("./", &RunTestFunc, nullptr);
 	Os_DirectoryEnumeratorSyncStart(handle);
-	while (Os_DirectoryEnumeratorSyncNext(handle)) {
-		count++;
-	}
+	while (Os_DirectoryEnumeratorSyncNext(handle)) {}
 	Os_DirectoryEnumeratorFree(handle);
 
-	LOGINFOF("%i tests ran", count);
+	LOGINFOF("%i test programs ran", testsRan);
 
 	SimpleLogManager_Free(logger);
 
