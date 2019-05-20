@@ -15,6 +15,12 @@ project(${ProjectName})
 set(Src main.cpp)
 set(Deps
 		al2o3_platform
+		al2o3_os
+		utils_simple_logmanager
+		)
+
+set(TestsToBuild
+		al2o3_platform
 		al2o3_catch2
 		al2o3_tinystl
 		al2o3_vfile
@@ -26,7 +32,8 @@ set(Deps
 		al2o3_stb
 		utils_simple_logmanager
 		utils_misccpp
-		utils_gameappshell
+		utils_gameappshell_interface
+		utils_gameappshell_impl_basic
 		gfx_imageformat
 		gfx_image_interface
 		gfx_image_impl_basic
@@ -47,9 +54,16 @@ ADD_CONSOLE_APP(${ProjectName} "${Src}" "${Deps}")
 # this magic incantation ensure all test exes are created before this app
 # so it can iterate and run them all, not all projects have test exes so
 # this skips them for you
-set(_deps ${Deps})
-list(TRANSFORM _deps PREPEND test_ )
+set(_deps ${TestsToBuild})
+set(_deptests ${TestsToBuild})
+list(TRANSFORM _deptests PREPEND test_ )
+
 foreach (_dep ${_deps})
+	get_filename_component(deplibname ${_dep} NAME)
+	FETCH_DEPENDENCY(${deplibname})
+endforeach()
+
+foreach (_dep ${_deptests})
 	get_filename_component(deplibname ${_dep} NAME)
 	if(TARGET ${deplibname})
 		add_dependencies(${ProjectName} ${deplibname})

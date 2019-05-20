@@ -24,6 +24,8 @@
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/rukkal_static-stl-src/Catch" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/simple_logmanager-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/utils_gameappshell-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/utils_gameappshell_impl_basic-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/utils_gameappshell_interface-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/utils_misccpp-src" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/cmake-build-debug/_deps/utils_simple_logmanager-src" vcs="Git" />
   </component>
