@@ -21,6 +21,7 @@ set(Deps
 
 set(TestsToBuild
 		al2o3_platform
+		al2o3_memory
 		al2o3_catch2
 		al2o3_tinystl
 		al2o3_vfile
@@ -30,6 +31,8 @@ set(TestsToBuild
 		al2o3_lz4
 		al2o3_miniz
 		al2o3_stb
+		al2o3_cadt
+		data_binify
 		utils_simple_logmanager
 		utils_misccpp
 		utils_gameappshell_interface
@@ -38,6 +41,8 @@ set(TestsToBuild
 		gfx_image_interface
 		gfx_image_impl_basic
 		gfx_imageio
+		gfx_meshmod
+		gfx_meshmodio
 		)
 
 

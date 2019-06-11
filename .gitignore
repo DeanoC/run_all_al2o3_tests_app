@@ -33,3 +33,7 @@
 /.vs/run_all_al2o3_tests_app/v16
 /.vs/slnx.sqlite
 /out_bin
+/out/build/x64-Debug
+/out_libs
+# Project exclude paths
+/cmake-build-debug/
