@@ -33,6 +33,10 @@ set(TestsToBuild
 		al2o3_stb
 		al2o3_cadt
 		data_binify
+		data_binnybundle
+		data_binnybundlewriter
+		data_resourcemanager
+		data_bufferutils
 		utils_simple_logmanager
 		utils_misccpp
 		utils_gameappshell_interface
