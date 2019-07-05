@@ -26,7 +26,6 @@ set(TestsToBuild
 		al2o3_tinystl
 		al2o3_vfile
 		al2o3_os
-		al2o3_sstl
 		al2o3_cmath
 		al2o3_lz4
 		al2o3_miniz
