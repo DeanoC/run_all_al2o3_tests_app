@@ -46,6 +46,7 @@ set(TestsToBuild
 		gfx_imageio
 		gfx_meshmod
 		gfx_meshmodio
+		tiny_ktx
 		)
 
 
