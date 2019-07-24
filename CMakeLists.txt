@@ -40,7 +40,7 @@ set(TestsToBuild
 		utils_misccpp
 		utils_gameappshell_interface
 		utils_gameappshell_impl_basic
-		gfx_imageformat
+		tiny_imageformat
 		gfx_image_interface
 		gfx_image_impl_basic
 		gfx_imageio

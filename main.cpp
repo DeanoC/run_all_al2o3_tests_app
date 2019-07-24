@@ -25,9 +25,11 @@ int main(int argv, char* argc[]) {
 #if AL2O3_PLATFORM == AL2O3_PLATFORM_WINDOWS
 			size_t namePos;
 			size_t extPos;
-			Os_SplitPath(filename, &namePos, &extPos);
-			if (extPos == FS_npos) return;
-			if (strncmp(filename + extPos, "exe", 4) != 0) return;
+			Os_SplitPath(entry->filename, &namePos, &extPos);
+			if (extPos == FS_npos)
+				continue;
+			if (strncmp(entry->filename + extPos, "exe", 4) != 0)
+				continue;
 #endif
 			if(entry->directory)
 				continue;
