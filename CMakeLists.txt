@@ -22,6 +22,7 @@ set(Deps
 set(TestsToBuild
 		al2o3_platform
 		al2o3_memory
+		al2o3_cadt
 		al2o3_catch2
 		al2o3_tinystl
 		al2o3_vfile
@@ -30,24 +31,44 @@ set(TestsToBuild
 		al2o3_lz4
 		al2o3_miniz
 		al2o3_stb
-		al2o3_cadt
+		al2o3_syoyo
+		al2o3_enki
+		data_bufferutils
 		data_binify
 		data_binnybundle
 		data_binnybundlewriter
 		data_resourcemanager
-		data_bufferutils
 		utils_simple_logmanager
 		utils_misccpp
 		utils_gameappshell_interface
 		utils_gameappshell_impl_basic
-		gfx_imageformat
+		utils_fmt
+		tiny_ktx
+		tiny_dds
+		utils_nativefiledialogs
+		tiny_imageformat
 		gfx_image_interface
 		gfx_image_impl_basic
 		gfx_imageio
+		gfx_imagecompress
+		gfx_imagedecompress
 		gfx_meshmod
 		gfx_meshmodio
-		gfx_imagecompress
-		tiny_ktx
+		gfx_theforge
+		gfx_spirvheaders
+		gfx_spirvcross
+		gfx_glslang
+		gfx_spirvtools
+		gfx_shaderc
+		gfx_shadercompiler
+		gfx_imgui
+		gfx_imgui_al2o3_theforge_bindings
+		input_gainput
+		input_basic_interface
+		input_basic_impl_gainput
+		lua_base5.3
+		lua_image
+		lua_al2o3_os
 		)
 
 
