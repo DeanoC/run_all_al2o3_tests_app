@@ -25,7 +25,7 @@ set(Deps
 		al2o3_platform
 		al2o3_os
 		utils_simple_logmanager
-		base_pxfoundations
+		physics_physx4
 		)
 
 set(TestsToBuild
@@ -79,6 +79,7 @@ set(TestsToBuild
 		lua_image
 		lua_al2o3_os
 		base_pxfoundations
+		physics_physx4
 		)
 
 
