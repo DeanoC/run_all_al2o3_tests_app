@@ -34,7 +34,7 @@ int main(int argv, char* argc[]) {
 			if(entry->directory)
 				continue;
 
-			LOGINFOF("Running %s test", entry->filename);
+			LOGINFO("Running %s test", entry->filename);
 			Os_SystemRun(entry->filename, 0, nullptr);
 
 			testsRan++;
@@ -42,7 +42,7 @@ int main(int argv, char* argc[]) {
 	}
 	Os_DirectoryEnumeratorDestroy(handle);
 
-	LOGINFOF("%i test programs ran", testsRan);
+	LOGINFO("%i test programs ran", testsRan);
 
 	SimpleLogManager_Free(logger);
 
