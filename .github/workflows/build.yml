@@ -1,7 +1,10 @@
 name: CI
 
 on: [push]
-
+on:
+  schedule:
+    # * is a special character in YAML so you have to quote this string - 1 am
+    - cron:  '0 1 * * *'
 jobs:
   build:
 
