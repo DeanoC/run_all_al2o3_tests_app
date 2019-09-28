@@ -25,7 +25,6 @@ set(Deps
 		al2o3_platform
 		al2o3_os
 		utils_simple_logmanager
-		physics_physx4
 		)
 
 set(TestsToBuild
@@ -49,12 +48,9 @@ set(TestsToBuild
 		data_resourcemanager
 		utils_simple_logmanager
 		utils_misccpp
-		utils_gameappshell_interface
-		utils_gameappshell_impl_basic
 		utils_fmt
 		tiny_ktx
 		tiny_dds
-		utils_nativefiledialogs
 		tiny_imageformat
 		gfx_image_interface
 		gfx_image_impl_basic
@@ -63,7 +59,6 @@ set(TestsToBuild
 		gfx_imagedecompress
 		gfx_meshmod
 		gfx_meshmodio
-		gfx_theforge
 		gfx_spirvheaders
 		gfx_spirvcross
 		gfx_glslang
@@ -71,10 +66,6 @@ set(TestsToBuild
 		gfx_shaderc
 		gfx_shadercompiler
 		gfx_imgui
-		gfx_imgui_al2o3_theforge_bindings
-		input_gainput
-		input_basic_interface
-		input_basic_impl_gainput
 		lua_base5.3
 		lua_image
 		lua_al2o3_os
@@ -82,6 +73,19 @@ set(TestsToBuild
 		physics_physx4
 		)
 
+# current linux is command line only
+if(APPLE OR WIN32)
+list( APPEND TestsToBuild
+		input_basic_interface
+		utils_gameappshell_interface
+		gfx_theforge
+		input_gainput
+		utils_gameappshell_impl_basic
+		input_basic_impl_gainput
+		gfx_imgui_al2o3_theforge_bindings
+		utils_nativefiledialogs
+)
+endif()
 
 option(BUILD_TESTS "Build Test executubles" ON)
 
